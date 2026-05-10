@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Productos</h1> <!--Paso 5-->
+
+     <!-- Esta tabla va a mostrar los productos -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo-tabla">
+            <!-- Aquí el JS va a insertar las filas -->
+        </tbody>
+    </table>   <!--aqui termina el paso uno, muestra la tabla con los datos-->
+
+
+     <hr> <!--Termina el paso 5 y comienza el paso 6-->
+
+     <!-- Formulario para buscar un producto por su ID -->
+    <h2>Buscar juego por ID</h2>
+    <input type="number" id="input-id" placeholder="Escribí un ID..." min="1">
+    <button onclick="buscarJuego()">Buscar</button>
+
+    <!-- Un <input> donde el usuario escribe el ID y un <button> que llama a buscarProducto()
+      La función usa el endpoint /productos/:id que ya tenías en tu servidor-->
+
+    <!-- Aquí se muestra el resultado de la búsqueda -->
+    <div id="resultado"></div>
+
+    <hr> <!--Termina el paso 6 y Comienza el paso 9-->
+
+<!-- Formulario para crear un producto nuevo (para el post) -->
+<h2>Agregar juego</h2>
+
+<input type="text"   id="nombre"  placeholder="Nombre">
+<input type="number" id="precio"  placeholder="Precio">
+<input type="number" id="stock"   placeholder="Stock">
+
+<!-- El botón llama a la función de post.js -->
+<button onclick="createJuego()">Agregar</button>
+
+<!-- Aquí se confirma si se creó bien o hubo error -->
+<div id="resultado-post"></div>
+
+</body>
+<script src="get.js"></script>
+<script src="post.js"></script>
+</html>
