@@ -1,12 +1,22 @@
 //FUNCIÓN 1: trae todos los productos y llena la tabla, tercer y cuarto paso
-async function getJuegos() {
+async function getJuegos() { 
 
     const res = await fetch('http://localhost:3000/juegos');
     const juegos = await res.json();
 
-    const tbody = document.getElementById('cuerpo-tabla');
+    const tbody = document.getElementById('cuerpo-tabla'); //tbody guarda una referencia a ese elemento para poder escribir y guardarlo
+
+// Limpiamos la tabla antes de volver a llenarla
+tbody.innerHTML = '';
 
     juegos.forEach(juego => {
+
+ // Leemos lo que escribió el usuario en el filtro
+    const filtro = document.getElementById('filtro-nombre').value.toLowerCase();
+
+    // Si el nombre no coincide con el filtro, saltamos esta fila
+    if (!juego.nombre.toLowerCase().includes(filtro)) return;
+
         // Crea una fila con los 4 campos de cada juegos
         const fila = `
             <tr>
@@ -14,6 +24,10 @@ async function getJuegos() {
                 <td>${juego.nombre}</td>
                 <td>${juego.precio}</td>
                 <td>${juego.stock}</td>
+                  <td>                         
+                    <button onclick="eliminarJuego(${juego.id})">Eliminar</button>
+                    <button onclick="editarJuego(${juego.id}, '${juego.nombre}', ${juego.precio}, ${juego.stock})">Editar</button>
+                </td>   
             </tr>
         `;
         tbody.innerHTML += fila;
@@ -53,4 +67,4 @@ async function buscarJuego() {
 } //Termina el paso 7
 
 // Llamamos a getjuegos apenas carga la página
-getJuegos();
+getJuegos(); // "Cuando arranque la página, llamá a getJuegos() inmediatamente para llenar la tabla". Si no estuviera esa línea, la tabla aparecería vacía hasta que el usuario hiciera algo.

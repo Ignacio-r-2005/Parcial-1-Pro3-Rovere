@@ -1,0 +1,101 @@
+/* Fuente y fondo general temática gaming */
+body {
+    background-color: #0f0f1a;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    padding: 30px;
+}
+
+/* Título principal */
+h1 {
+    color: #00ff99;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px #00ff99;
+    margin-bottom: 10px;
+}
+
+/* Subtítulos */
+h2 {
+    color: #00ccff;
+    text-shadow: 0 0 6px #00ccff;
+    margin-top: 20px;
+}
+
+/* Línea separadora */
+hr {
+    border: 1px solid #333;
+    margin: 25px 0;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background-color: #1a1a2e;
+    color: #00ff99;
+    padding: 10px;
+    border: 1px solid #00ff99;
+}
+
+td {
+    padding: 8px 10px;
+    border: 1px solid #333;
+    background-color: #16213e;
+}
+
+/* Fila hover */
+tr:hover td {
+    background-color: #1f3060;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    border: 1px solid #00ccff;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 5px 3px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #666;
+}
+
+/* Botones generales */
+button {
+    background-color: #1a1a2e;
+    color: #00ff99;
+    border: 1px solid #00ff99;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 4px;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #00ff99;
+    color: #0f0f1a;
+}
+
+/* Formulario de edición */
+#form-editar {
+    background-color: #1a1a2e;
+    border: 1px solid #00ccff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* Mensajes de resultado */
+#resultado, #resultado-post {
+    margin-top: 10px;
+    padding: 8px;
+}

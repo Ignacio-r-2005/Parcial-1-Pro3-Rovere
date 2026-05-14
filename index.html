@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- Vinculamos el CSS -->
+    <link rel="stylesheet" href="estilo.css">
 </head>
-<body>
+<body> 
      <h1>Productos</h1> <!--Paso 5-->
+
+     <!-- Input para filtrar juegos por nombre -->
+<input type="text" id="filtro-nombre" placeholder="Filtrar por nombre..." oninput="getJuegos()">
 
      <!-- Esta tabla va a mostrar los productos -->
     <table border="1">
@@ -26,7 +32,7 @@
 
      <hr> <!--Termina el paso 5 y comienza el paso 6-->
 
-     <!-- Formulario para buscar un producto por su ID -->
+     <!-- Formulario para buscar un producto por su ID --> 
     <h2>Buscar juego por ID</h2>
     <input type="number" id="input-id" placeholder="Escribí un ID..." min="1">
     <button onclick="buscarJuego()">Buscar</button>
@@ -52,7 +58,29 @@
 <!-- Aquí se confirma si se creó bien o hubo error -->
 <div id="resultado-post"></div>
 
+
+<hr>
+
+<!-- Formulario de edición, oculto hasta que se aprieta Editar -->
+<div id="form-editar" style="display:none;">
+    <h2>Editar juego</h2>
+
+    <!-- Guarda el ID del juego que se está editando, el usuario no lo ve -->
+    <input type="hidden" id="edit-id">
+
+    <input type="text"   id="edit-nombre" placeholder="Nombre">
+    <input type="number" id="edit-precio" placeholder="Precio">
+    <input type="number" id="edit-stock"  placeholder="Stock">
+
+    <button onclick="guardarCambios()">Guardar cambios</button>
+
+    <!-- Cancela y oculta el formulario sin hacer nada -->
+    <button onclick="document.getElementById('form-editar').style.display='none'">Cancelar</button>
+</div>
+
 </body>
 <script src="get.js"></script>
 <script src="post.js"></script>
+<script src="delete.js"></script>
+<script src="put.js"></script>
 </html>
